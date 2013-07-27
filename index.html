@@ -27,8 +27,8 @@
   $(document).ready(function() {
     $(document.body).css( "background-color", random_rgb() );
 
-    $("#card").mouseenter( function() { direction = 0; } );
-    $("#card").mouseleave( function() { direction = 1; } );
+    $(".card").mouseenter( function() { direction = 0; } );
+    $(".card").mouseleave( function() { direction = 1; } );
 
     swing();
   });
