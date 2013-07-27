@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>slack.it</title>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.transform.light.js"></script>
+<script type="text/javascript">
+  function random_rgb()
+  {
+    var r = Math.floor(Math.random() * 255);
+    var g = Math.floor(Math.random() * 255);
+    var b = Math.floor(Math.random() * 255);
+    return "rgb(" + r + "," + g + "," + b + ")";
+  }
+
+  var degree = 5;
+  var direction = 1;
+  var duration = 1000;
+
+  function swing()
+  {
+    direction *= -1;
+    $(".card").animate({ "transform": "rotate(" + (degree * direction) + "deg)" },
+                       duration, swing);
+  }
+
+  $(document).ready(function() {
+    $(document.body).css( "background-color", random_rgb() );
+
+    $("#card").mouseenter( function() { direction = 0; } );
+    $("#card").mouseleave( function() { direction = 1; } );
+
+    swing();
+  });
+</script>
+
+<link href='http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister&v2' rel='stylesheet' type='text/css'>
+<style type="text/css">
+  .card {
+    background-color: #cff;
+    color: black;
+    padding: 1em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+  }
+  .card-name {
+    font-size: 32pt;
+    font-weight: bold;
+    font-family: 'Love Ya Like A Sister', cursive;
+  }
+</style>
+
+<table class="card">
+  <tr>
+    <th colspan="3" class="card-name">Francesco Gigli</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="http://gplus.to/jaramir"><img src="images/gplus.png"></a>
+    </td>
+    <td>
+      <a href="http://twitter.com/jaramir"><img src="images/twitter.png"></a>
+    </td>
+    <td>
+      <a href="http://github.com/jaramir"><img src="images/github.png"></a>
+    </td>
+  </tr>
+</table>
